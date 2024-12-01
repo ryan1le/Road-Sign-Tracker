@@ -7,7 +7,7 @@ from classes import MESSAGE_DICT
 
 class detector():
     def __init__(self, parent) -> None:
-        self.model = YOLO('../YOLO Weights/yolo11n.pt')
+        self.model = YOLO('../YOLO Weights/best.pt')
         self.names = self.model.names
         self.object_results = None
 
@@ -21,7 +21,7 @@ class detector():
         self.parent = parent
 
     def do_sign_detection(self, frame):
-        results = list(self.model.track(frame, persist=True, classes=39, tracker="bytetrack.yaml"))
+        results = list(self.model.track(frame, persist=True, tracker="bytetrack.yaml"))
 
         if (len(results[0].boxes)):
             self.object_results = results[0].boxes[0]

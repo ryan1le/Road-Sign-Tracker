@@ -21,6 +21,7 @@ class SignDetectionSystem():
 
         self.idle_confirm_filter = filters(IDLE_CONFIRM_FILTER_SIZE)
         self.confirm_detected_filter = filters(CONFIRM_DETECTED_FILTER_SIZE)
+        self.reset_filter = filters(RESET_FILTER_SIZE)
 
         self.idle_confirm_trigger = 0.0
         self.confirm_detected_trigger = 0.0
